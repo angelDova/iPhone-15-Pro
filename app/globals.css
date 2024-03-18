@@ -22,6 +22,11 @@ canvas {
   touch-action: none;
 }
 
+mux-player {
+  /* Hide all controls at once */
+  --controls: none;
+}
+
 .screen-max-width {
   margin-inline-start: auto;
   margin-inline-end: auto;

@@ -9,7 +9,10 @@
 //   yellowImg,
 // } from "../utils";
 
-// import highlightFirstVideo from "/assets/videos/highlight-first.mp4";
+import firstVideo from "@/videos/highlight-first.mp4";
+import secVideo from "@/videos/hightlight-sec.mp4";
+import thirdVideo from "@/videos/hightlight-third.mp4";
+import fourthVideo from "@/videos/hightlight-fourth.mp4";
 
 export const navLists = ["Store", "Mac", "iPhone", "Support"];
 
@@ -21,13 +24,13 @@ export const hightlightsSlides = [
       "Game‑changing chip.",
       "Groundbreaking performance.",
     ],
-    video: "/assets/videos/highlight-first.mp4",
+    video: firstVideo,
     videoDuration: 4,
   },
   {
     id: 2,
     textLists: ["Titanium.", "So strong. So light. So Pro."],
-    video: "/assets/videos/highlight-second.mp4",
+    video: thirdVideo,
     videoDuration: 5,
   },
   {
@@ -37,13 +40,13 @@ export const hightlightsSlides = [
       "longest optical zoom in",
       "iPhone ever. Far out.",
     ],
-    video: "/assets/videos/highlight-third.mp4",
+    video: secVideo,
     videoDuration: 2,
   },
   {
     id: 4,
     textLists: ["All-new Action button.", "What will yours do?."],
-    video: "/assets/videos/highlight-fourth.mp4",
+    video: fourthVideo,
     videoDuration: 3.63,
   },
 ];

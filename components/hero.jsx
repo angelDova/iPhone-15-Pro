@@ -1,21 +1,22 @@
 "use client";
 
+import NextVideo from "next-video";
+import smallHero from "/videos/smallHero.mp4";
+import hero from "/videos/hero.mp4";
+
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useEffect, useState } from "react";
-
 const Hero = () => {
   const [videoSrc, setVideoSrc] = useState(
-    window.innerWidth < 760
-      ? "/assets/videos/smallHero.mp4"
-      : "/assets/videos/hero.mp4"
+    window.innerWidth < 760 ? smallHero : hero
   );
 
   const handleVideoSrcSet = () => {
     if (window.innerWidth < 760) {
-      setVideoSrc("/assets/videos/smallHero.mp4");
+      setVideoSrc(smallHero);
     } else {
-      setVideoSrc("/assets/videos/hero.mp4");
+      setVideoSrc(hero);
     }
   };
 
@@ -23,7 +24,7 @@ const Hero = () => {
     window.addEventListener("resize", handleVideoSrcSet);
 
     return () => {
-      window.addEventListener("resize", handleVideoSrcSet);
+      window.removeEventListener("reisze", handleVideoSrcSet);
     };
   }, []);
 
@@ -38,15 +39,14 @@ const Hero = () => {
           iPhone 15 Pro
         </p>
         <div className="md:w-10/12 w-9/12">
-          <video
+          <NextVideo
             className="pointer-event-none"
             autoPlay
             muted
             playsInline={true}
             key={videoSrc}
-          >
-            <source src={videoSrc} />
-          </video>
+            src={videoSrc}
+          />
         </div>
       </div>
       <div
